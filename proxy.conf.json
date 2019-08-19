@@ -1,0 +1,23 @@
+
+
+{
+  "/movie-svc": {
+    "target": "http://dev1.robwing.com:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/movie-svc" : ""
+    }
+  },
+  "/user-svc": {
+    "target": "http://dev1.robwing.com:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/user-svc" : ""
+    }
+  }
+}
+
