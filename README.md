@@ -1,35 +1,50 @@
-# GmdbUi
+# GMDB Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This project contains an Angular client to front the GMDB microservices API.
 
-## Docker Instructions
+* Service API: 
+* Documentation:
+
+**Features**
+
+- Search movie database
+- Create account
+- Leave reviews
+- Leave comments
+
+## Setup
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+
+**Docker Instructions**
+
 1. Ensure gmdb-bridge network is created `docker network inspect gmdb-bridge`
 1. Ensure gmdb-gateway is running on gmdb-bridge network `docker network inspect gmdb-gateway` look for gmdb-bridge network
 1. Build the docker image `docker build -t gmdb/ui`
 1. Run the image `docker run -d -p 4200:4200 --name gmdb-ui --network gmdb-bridge gmdb/ui`
 
-* note: To change docker port, you must change it in `Dockerfile` and `server.js`.  To change local port, change just the first port number.
+> NOTE: To change docker port, you must change it in `Dockerfile` and `server.js`.  To change local port, change just the first port number.
 
-## Development server
+**Node Instructions**
+1. Download or clone this repo.
+2. Inside the gmdb-ui folder, run: `npm install`
+3. Run the server: `ng serve -o` or `npm run start`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Deployment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Run: `ng build --prod`
+2. Upload the `dist/gmdb-ui/` folder to your server
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## DEVELOPMENT TODOs
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-[x] Navigation
+-[x] Search bar
+-[x] Login form
+-[x] Movie list
+-[x] Movie detail
+-[x] Comment form
+-[ ] Movie service
+-[ ] Search service
+-[ ] Comment service

@@ -1,0 +1,42 @@
+<div class="justify-content-center text-center">
+  <!--  FORM BEGIN
+  Always start with a regular form, no directives.
+  Then add 1 field at a time, adding validation as you go! -->
+  <form (ngSubmit)="authenticate()" [formGroup]="loginForm" class="form col-md-6 offset-sm-3">
+
+    <!--    EMAIL INPUT
+        FormControls have names represented by the keys of the FormGroup.
+        Take a look at the controller to see how HTML here mirrors controls there.-->
+    <div class="form-group">
+      <label>Email:
+        <input class="form-control" type="email" formControlName="email" required>
+      </label>
+    </div>
+
+    <!--    EMAIL VALIDATION
+      FormControls have names represented by the keys of the FormGroup.
+      Take a look at the controller to see how HTML here mirrors controls there.-->
+    <div *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.dirty" class="alert alert-danger">
+      Invalid email.
+    </div>
+    <br />
+
+    <!--    PASSWORD INPUT
+      FormControls have names represented by the keys of the FormGroup.
+      Take a look at the controller to see how HTML here mirrors controls there.-->
+    <div class="form-group">
+      <label>Password:
+        <input class="form-control" type="password" formControlName="password" required>
+      </label>
+    </div>
+
+    <!--    PASSWORD VALIDATION
+      FormControls have names represented by the keys of the FormGroup.
+      Take a look at the controller to see how HTML here mirrors controls there.-->
+    <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.dirty" class="alert alert-danger">
+      Invalid password.
+    </div>
+    <br />
+    <input class="btn btn-primary" type="submit" value="Login">
+  </form>
+</div>

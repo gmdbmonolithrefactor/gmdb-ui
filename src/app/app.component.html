@@ -1,11 +1,6 @@
-<div style="text-align:center">
-  <h1>
-    Galvanize Movie Database
-  </h1>
-  <p><img src="../assets/img/gmdb.png" alt="gMDB Logo"></p>
-  <div class="row">
-    <a class="btn btn=primary" routerLink="/movies"><strong>Search Movies</strong></a>
-  </div>
-</div>
+<div class="container-fluid">
+  <app-navigation></app-navigation>
 
-<router-outlet></router-outlet>
+<!--  App views will appear below via the router-->
+  <router-outlet></router-outlet>
+</div>

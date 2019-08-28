@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MoviesComponent } from './components/movies/movies.component';
-import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
+import { SearchComponent } from './components/search';
+import { LoginComponent } from './components/login';
 
+/**
+ * ROUTING MODULE
+ *
+ * This module manages route configuration. The routes array below defines each
+ * route. See the documentation to learn about all options available to you:
+ * https://angular.io/guide/router#configuration
+ */
 const routes: Routes = [
-  {
-    path: 'movie/details/:id',
-    component: MovieDetailsComponent
-  },
-  {
-    path: 'movies',
-    component: MoviesComponent
-  }
+  { component: SearchComponent, path: ''},
+  { component: LoginComponent, path: 'login'},
 ];
 
 @NgModule({

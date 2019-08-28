@@ -1,0 +1,36 @@
+<div *ngIf="currentUser; else plsLogin">
+  <!--  FORM BEGIN
+  Always start with a regular form, no directives.
+  Then add 1 field at a time, adding validation as you go! -->
+  <form (ngSubmit)="save()" [formGroup]="commentForm" class="form col-md-6">
+    <label>
+      <input class="form-control" type="text" formControlName="userId" value="{{ currentUser }}" hidden required>
+    </label>
+
+    <!--    COMMENT INPUT
+      FormControls have names represented by the keys of the FormGroup.
+      Take a look at the controller to see how HTML here mirrors controls there.-->
+    <div class="form-group">
+      <label>Leave a comment:
+        <input class="form-control" type="text" formControlName="body" required>
+      </label>
+    </div>
+
+    <!--    COMMENT VALIDATION
+      FormControls have names represented by the keys of the FormGroup.
+      Take a look at the controller to see how HTML here mirrors controls there.-->
+    <div *ngIf="commentForm.controls.body.invalid && commentForm.controls.body.dirty" class="alert alert-danger">
+      Your opinion is wrong.
+    </div>
+    <br />
+    <input class="btn btn-primary" type="submit" value="Login">
+  </form>
+</div>
+<!-- TEMPLATE VARIABLES
+  This is the syntax for creating an Angular template.
+  The template is assigned to the variable plsLogin
+  This will only display when the condition on line 1 is false.
+  See: https://angular.io/api/common/NgIf#description -->
+<ng-template #plsLogin>
+  Login to leave a comment!
+</ng-template>
