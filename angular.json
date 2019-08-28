@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gmdb-client": {
+    "gmdb-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gmdb-client",
+            "outputPath": "dist/gmdb-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gmdb-client:build"
+            "browserTarget": "gmdb-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gmdb-client:build:production"
+              "browserTarget": "gmdb-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gmdb-client:build"
+            "browserTarget": "gmdb-ui:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "gmdb-client:serve"
+            "devServerTarget": "gmdb-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gmdb-client:serve:production"
+              "devServerTarget": "gmdb-ui:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "gmdb-client"
+  "defaultProject": "gmdb-ui"
 }

@@ -39,12 +39,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## DEVELOPMENT TODOs
 
--[x] Navigation
--[x] Search bar
--[x] Login form
--[x] Movie list
--[x] Movie detail
--[x] Comment form
--[ ] Movie service
--[ ] Search service
--[ ] Comment service
+- [x] Navigation
+- [x] Search bar
+- [x] Login form
+- [x] Movie list
+- [x] Movie detail
+- [x] Comment form
+- [ ] Movie service
+- [ ] Search service
+- [ ] Comment service
+- [ ] Promo/Landing page service
