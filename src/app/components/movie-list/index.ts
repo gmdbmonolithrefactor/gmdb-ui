@@ -17,7 +17,7 @@ export class MovieListComponent implements OnInit {
   }
 
   getMovies() {
-    this.movieService.getMovies().subscribe(
+    this.movieService.all().subscribe(
       data => { this.movies = data; },
       err => console.error(err),
       () => console.log('movies loaded')

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://157.230.165.191:8000'
+  apiUrl: 'http://dev1.robwing.com:8000/',
 };

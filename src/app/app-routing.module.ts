@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search';
 import { LoginComponent } from './components/login';
+import {MovieListComponent} from './components/movie-list';
 
 /**
  * ROUTING MODULE
@@ -13,6 +14,7 @@ import { LoginComponent } from './components/login';
 const routes: Routes = [
   { component: SearchComponent, path: ''},
   { component: LoginComponent, path: 'login'},
+  { component: MovieListComponent, path: 'movies'}
 ];
 
 @NgModule({

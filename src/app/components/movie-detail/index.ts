@@ -16,10 +16,8 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {}
 
   getMovie(id: number) {
-    this.movieService.getOneMovie(id).subscribe(
-      data => {
-        this.movie = data;
-      },
+    this.movieService.get(id).subscribe(
+      data => { this.movie = data; },
       error => throwError(error),
       () => console.log('movie loaded')
     );

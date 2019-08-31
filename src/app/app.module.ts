@@ -14,6 +14,7 @@ import { MovieDetailComponent } from './components/movie-detail';
 import { CommentFormComponent } from './components/comment-form';
 import { CommentListComponent } from './components/comment-list';
 import { CommentDetailComponent } from './components/comment-detail';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CommentDetailComponent } from './components/comment-detail';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
