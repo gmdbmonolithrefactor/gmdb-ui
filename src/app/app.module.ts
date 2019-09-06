@@ -15,6 +15,8 @@ import { CommentFormComponent } from './components/comment-form';
 import { CommentListComponent } from './components/comment-list';
 import { CommentDetailComponent } from './components/comment-detail';
 import {HttpClientModule} from '@angular/common/http';
+import { LandingPageComponent } from './components/landing-page';
+import { MoviePageComponent } from './components/movie-page';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {HttpClientModule} from '@angular/common/http';
     MovieDetailComponent,
     CommentFormComponent,
     CommentListComponent,
-    CommentDetailComponent
+    CommentDetailComponent,
+    LandingPageComponent,
+    MoviePageComponent
   ],
   imports: [
     BrowserModule,

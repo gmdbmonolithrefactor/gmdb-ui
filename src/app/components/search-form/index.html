@@ -1,4 +1,5 @@
-<form class="form-inline justify-content-center">
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-{{customClass}} my-2 my-sm-0" type="submit">Search</button>
+<form [formGroup]="searchForm" class="form-inline justify-content-center">
+  <input formControlName="query" name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+<!--  Emit event for parent component to use-->
+  <button (click)="handleQuery()" class="btn btn-outline-{{customClass}} my-2 my-sm-0" type="submit">Search</button>
 </form>

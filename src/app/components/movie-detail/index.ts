@@ -9,18 +9,13 @@ import {throwError} from 'rxjs';
   styleUrls: ['./styles.css']
 })
 export class MovieDetailComponent implements OnInit {
+  /**
+   * Movie Detail displays brief info about a movie: poster and title only
+   */
   @Input() movie: Movie;
 
-  constructor(private movieService: MovieService) { }
+  constructor() { }
 
   ngOnInit() {}
-
-  getMovie(id: number) {
-    this.movieService.get(id).subscribe(
-      data => { this.movie = data; },
-      error => throwError(error),
-      () => console.log('movie loaded')
-    );
-  }
 
 }

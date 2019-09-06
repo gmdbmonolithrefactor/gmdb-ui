@@ -1,8 +1,12 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container text-center">
-    <h1 class="display-4">Welcome to GMDB</h1>
-    <p class="lead">Start by searching our movie database!</p>
-    <hr class="my-4">
-    <search-form [customClass]="searchClass"></search-form>
-  </div>
+<!--<div class="jumbotron jumbotron-fluid">-->
+<!--  <div class="container text-center">-->
+<!--    <h1 class="display-4">Welcome to GMDB</h1>-->
+<!--    <p class="lead">Start by searching our movie database!</p>-->
+<!--    <hr class="my-4">-->
+<!--    <search-form (query)="getResults($event)" [customClass]="searchClass"></search-form>-->
+<!--  </div>-->
+<!--</div>-->
+<div *ngFor="let movie of results">
+  <!--    TODO: Clicking this should open a MoviePage  -->
+  <movie [movie]="movie"></movie>
 </div>

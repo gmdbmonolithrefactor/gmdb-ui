@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ApiServices as api } from '../utils/api-services.enum';
 import { environment as env } from '../../environments/environment';
 import { Movie } from '../models/movie';
@@ -24,5 +24,14 @@ export class MovieService {
 
   get(id: number): Observable<any> {
     return this.http.get(this.apiUrl + id, httpOptions);
+  }
+
+  search(query) {
+    // TODO: create filter for movie search
+    this.all().subscribe(data => {
+      this.movies = data;
+    });
+    const fake = [this.movies[3]];
+    return of(fake);
   }
 }
