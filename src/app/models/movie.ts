@@ -6,4 +6,5 @@ export class Movie {
   rating: string;
   genre: string;
   actors: string;
+  plot: string;
 }

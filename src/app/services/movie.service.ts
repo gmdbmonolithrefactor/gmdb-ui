@@ -16,7 +16,11 @@ export class MovieService {
   private movies: Movie[];
   private apiUrl = env.apiUrl + api.MoviesApi;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.all().subscribe(data => {
+      this.movies = data;
+    });
+  }
 
   all(): Observable<any> {
     return this.http.get(this.apiUrl + '?search=', httpOptions);
@@ -27,11 +31,7 @@ export class MovieService {
   }
 
   search(query) {
-    // TODO: create filter for movie search
-    this.all().subscribe(data => {
-      this.movies = data;
-    });
-    const fake = [this.movies[3]];
-    return of(fake);
+    const results = this.movies.filter((movie) => movie.title.toLowerCase().includes(query));
+    return of(results);
   }
 }

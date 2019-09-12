@@ -1,6 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'search-form',
@@ -11,12 +10,18 @@ export class SearchFormComponent implements OnInit {
   // styling for buttons
   @Input() customClass: string;
   @Input() customButtonType: string;
+  @Input() searchQueryInput;
 
-  // search results
-  @Output() query = new EventEmitter();
+  /* EMIT SEARCH EVENT.
+   * When the search is submitted, this.handleQuery() will emit the form
+   * value to parent component.
+   * Review this template for example of child implementation.
+   * Review navigation/index.html for example of parent implementation.
+   */
+  @Output() searchInput = new EventEmitter();
   searchForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.searchForm = this.fb.group({
@@ -24,9 +29,13 @@ export class SearchFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Search form Handler
+   * @event
+   * @desc emits search form data for parent components to receive.
+   */
   handleQuery() {
-    this.query.emit(this.searchForm.controls.query.value);
-    this.router.navigate(['search']);
+    this.searchInput.emit(this.searchForm.controls.query.value);
   }
 
 }

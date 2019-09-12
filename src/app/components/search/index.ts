@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MovieService} from '../../services/movie.service';
+import { MovieService } from '../../services/movie.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'search',
@@ -12,18 +13,16 @@ export class SearchComponent implements OnInit {
   searchQuery;
   results = [];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    // fetch url query params (eg. /search?q=data)
+    this.route.queryParams
+      .subscribe(params => this.searchQuery = params.q);
+    // fetch search results
     this.movieService.search(this.searchQuery).subscribe((data) => {
       console.log(data);
       this.results = data;
     });
   }
-
-  getResults(query) {
-    this.searchQuery = query;
-    console.log('QUERY', this.searchQuery);
-  }
-
 }
