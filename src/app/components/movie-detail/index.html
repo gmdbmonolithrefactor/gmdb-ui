@@ -1,8 +1,5 @@
-<div class="card">
+<div class="card movie-card mx-1">
   <a [routerLink]="['/movies', movie.imdbid]" [state]="movie">
-    <img src="{{ movie.poster }}" alt="movie poster for {{ movie.title }}">
+    <img src="{{ verifyPoster(movie.poster) + '?text=' + movie.title }}" alt="movie poster for {{ movie.title }}" class="img-fluid rounded">
   </a>
-  <div id="card-body">
-    <h5 class="card-title">{{ movie.title }}</h5>
-  </div>
 </div>

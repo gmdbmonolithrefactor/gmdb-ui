@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
+import { fadeInAnimation } from '../../animations/fade-in';
 
 @Component({
   selector: 'movie-page',
   templateUrl: './index.html',
-  styleUrls: ['./styles.css']
+  styleUrls: ['./styles.css'],
+  animations: [fadeInAnimation]
 })
 export class MoviePageComponent implements OnInit {
   /**
@@ -15,7 +17,7 @@ export class MoviePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // state comes from routerLink parameters on the template
     this.movie = window.history.state;
   }
-
 }

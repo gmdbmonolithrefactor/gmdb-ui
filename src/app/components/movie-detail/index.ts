@@ -13,9 +13,17 @@ export class MovieDetailComponent implements OnInit {
    * Movie Detail displays brief info about a movie: poster and title only
    */
   @Input() movie: Movie;
+  posterPlaceHolder = 'https://via.placeholder.com/300x445/000/';
 
   constructor() { }
 
   ngOnInit() {}
 
+  verifyPoster(src) {
+    if (src === 'N/A' || src.includes('media-imdb')) {
+      return this.posterPlaceHolder;
+    } else {
+      return src;
+    }
+  }
 }

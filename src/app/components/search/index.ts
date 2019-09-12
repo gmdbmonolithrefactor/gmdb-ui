@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
+import { fadeInAnimation } from '../../animations/fade-in';
 
 @Component({
   selector: 'search',
   templateUrl: './index.html',
-  styleUrls: ['./styles.css']
+  styleUrls: ['./styles.css'],
+  animations: [fadeInAnimation]
 })
 export class SearchComponent implements OnInit {
   // style for search button
